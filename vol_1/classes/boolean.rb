@@ -7,7 +7,7 @@ class Boolean < Struct.new(:value)
     "<#{self}>"
   end
 
-  def reduceible?
+  def reducible?
     false
   end
 end

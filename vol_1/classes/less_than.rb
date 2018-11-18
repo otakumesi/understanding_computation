@@ -7,12 +7,12 @@ class LessThan < Struct.new(:left, :right)
     "<<#{self}>>"
   end
 
-  def reduceible?
+  def reducible?
     true
   end
 
   def reduce(environment)
-    if left.reduceible?
+    if left.reducible?
       LessThan.new(left.reduce(environment), right)
     elsif right.reducible?
       LessThan.new(left, right.reduce(environment))

@@ -4,7 +4,7 @@ class Machine < Struct.new(:expression, :environment)
   end
 
   def run
-    while expression.reduceible?
+    while expression.reducible?
       puts expression
       step
     end

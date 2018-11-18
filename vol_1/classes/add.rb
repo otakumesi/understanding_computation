@@ -7,14 +7,14 @@ class Add < Struct.new(:left, :right)
     "<<#{self}>>"
   end
 
-  def reduceible?
+  def reducible?
     true
   end
 
   def reduce(environment)
-    if left.reduceible?
+    if left.reducible?
       Add.new(left.reduce(environment), right)
-    elsif right.reduceible?
+    elsif right.reducible?
       Add.new(left, right.reduce(environment))
     else
       Number.new(left.value + right.value)
