@@ -18,4 +18,8 @@ class Assign < Struct.new(:name, :expression)
       [DoNothing.new, environment.merge(name => expression)]
     end
   end
+
+  def evaluate(environment)
+    environment.merge(name => expression.evaluate(environment))
+  end
 end

@@ -22,6 +22,6 @@ class LessThan < Struct.new(:left, :right)
   end
 
   def evaluate(environment)
-    Number.new(left.evaluate(environment).value < right.evaluate(environment).value)
+    Boolean.new(left.evaluate(environment).value < right.evaluate(environment).value)
   end
 end
