@@ -4,7 +4,7 @@ class Boolean < Struct.new(:value)
   end
 
   def inspect
-    "<#{self}>"
+    "<<#{self}>>"
   end
 
   def reducible?
@@ -13,5 +13,9 @@ class Boolean < Struct.new(:value)
 
   def evaluate(environment)
     self
+  end
+
+  def to_ruby
+    "-> e { #{value.inspect} }"
   end
 end
