@@ -1,6 +1,10 @@
 require 'set'
 
 class NFARulebook < Struct.new(:rules)
+  def alphabet
+    rules.map(&:character).compact.uniq
+  end
+
   def next_states(states, character)
     states.flat_map { |state| follow_rules_for(state, character) }.to_set
   end
