@@ -22,4 +22,15 @@ class NFASampleRulebookFactory
       FARule.new(6, 'a', 4)
     ])
   end
+
+  def self.build_for_dfa_sim
+    NFARulebook.new([
+      FARule.new(1, 'a', 1),
+      FARule.new(1, 'a', 2),
+      FARule.new(1, nil, 2),
+      FARule.new(2, 'b', 3),
+      FARule.new(3, 'b', 1),
+      FARule.new(3, nil, 2)
+    ])
+  end
 end
